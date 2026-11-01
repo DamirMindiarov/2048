@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bynkryaiprs4u"]
+
+[ext_resource type="Texture2D" uid="uid://bec5dk0bmt25j" path="res://cell.png" id="1_upbjj"]
+
+[node name="Cell" type="Control" unique_id=1771527335]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 60.0
+offset_bottom = 60.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Background" type="TextureRect" parent="." unique_id=895364955]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_upbjj")
+expand_mode = 1

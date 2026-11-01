@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dq65xapm4lkww"]
+
+[ext_resource type="Texture2D" uid="uid://cx5y1ecph710h" path="res://assets_piece/circle_black.png" id="1_6k0fr"]
+
+[node name="GamePiece" type="TextureRect" unique_id=1294077475]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -30.0
+offset_right = 30.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("1_6k0fr")
+expand_mode = 1
+flip_h = true
+flip_v = true
