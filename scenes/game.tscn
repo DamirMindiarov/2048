@@ -5,6 +5,8 @@
 [ext_resource type="Script" uid="uid://dd7as7jjj8245" path="res://scenes/swipes.gd" id="3_lnu2h"]
 [ext_resource type="Script" uid="uid://dn4g786pxv48a" path="res://scenes/piece_spawner.gd" id="4_lbhrr"]
 [ext_resource type="Script" uid="uid://d7ffvs0pn03w" path="res://scenes/movement_controller.gd" id="5_iywne"]
+[ext_resource type="Script" uid="uid://dw7uyk1f54wfv" path="res://scenes/game_over_detector.gd" id="6_p57ef"]
+[ext_resource type="Script" uid="uid://bkg4v46ocvnmi" path="res://scenes/game_over_menu.gd" id="7_u5sy4"]
 
 [node name="Game" type="Control" unique_id=1849560439]
 layout_mode = 3
@@ -38,3 +40,49 @@ script = ExtResource("4_lbhrr")
 
 [node name="MovementController" type="Node" parent="MainLayout" unique_id=1252054167]
 script = ExtResource("5_iywne")
+
+[node name="GameOverDetector" type="Node" parent="MainLayout" unique_id=297844884]
+script = ExtResource("6_p57ef")
+
+[node name="GameOverMenu" type="ColorRect" parent="." unique_id=2003725461]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.012617188, 0.012617188, 0.012617188, 0.5411765)
+script = ExtResource("7_u5sy4")
+
+[node name="Label" type="Label" parent="GameOverMenu" unique_id=1741848495]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -53.0
+offset_top = -57.0
+offset_right = 53.0
+offset_bottom = 57.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "КОНЕЦ ИГРЫ"
+
+[node name="RestartButton" type="Button" parent="GameOverMenu" unique_id=1958816459]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -193.0
+offset_top = 438.0
+offset_right = 193.0
+offset_bottom = 515.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "ИГРАТЬ СНОВА"

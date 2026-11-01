@@ -5,6 +5,8 @@ extends Control
 @onready var detector: Node = $MainLayout/swipes
 @onready var piece_spawner: Node = $MainLayout/PieceSpawner
 @onready var movement_controller: Node = $MainLayout/MovementController
+@onready var game_over_detector: Node = $MainLayout/GameOverDetector
+@onready var game_over_menu: Control = $GameOverMenu
 
 
 func _ready() -> void:
@@ -19,3 +21,6 @@ func _input(event: InputEvent) -> void:
 			print("ГЛАВНЫЙ СКРИПТ GAME ПОЙМАЛ ХОД: ", swipe)
 			movement_controller.move_all_pieces(swipe)
 			piece_spawner.spawn_pieces(7)
+			
+			if game_over_detector.is_game_over():
+				game_over_menu.visible = true

@@ -37,7 +37,6 @@ func spawn_pieces(count: int) -> void:
 			if cell.name.begins_with("Cell") or "@Control@" in cell.name:
 				if not has_piece:
 					empty_cells.append(cell)
-
 			
 			
 	# 2. Рождаем фишки на свободных местах
