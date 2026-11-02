@@ -6,7 +6,9 @@
 [ext_resource type="Script" uid="uid://dn4g786pxv48a" path="res://scenes/piece_spawner.gd" id="4_lbhrr"]
 [ext_resource type="Script" uid="uid://d7ffvs0pn03w" path="res://scenes/movement_controller.gd" id="5_iywne"]
 [ext_resource type="Script" uid="uid://dw7uyk1f54wfv" path="res://scenes/game_over_detector.gd" id="6_p57ef"]
+[ext_resource type="Script" uid="uid://bullqrfs2w7pl" path="res://scenes/match_detector.gd" id="7_gee14"]
 [ext_resource type="Script" uid="uid://bkg4v46ocvnmi" path="res://scenes/game_over_menu.gd" id="7_u5sy4"]
+[ext_resource type="Script" uid="uid://b85r2xfruf6nh" path="res://scenes/score_manager.gd" id="8_0tnpc"]
 
 [node name="Game" type="Control" unique_id=1849560439]
 layout_mode = 3
@@ -15,6 +17,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("1_yqjtg")
 
 [node name="MainLayout" type="VBoxContainer" parent="." unique_id=1111560087]
@@ -24,13 +28,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="GridBoard" type="GridContainer" parent="MainLayout" unique_id=2116142439]
-layout_mode = 2
-size_flags_vertical = 6
-mouse_filter = 0
-columns = 10
-script = ExtResource("1_uwrxv")
 
 [node name="swipes" type="Node" parent="MainLayout" unique_id=2078275646]
 script = ExtResource("3_lnu2h")
@@ -43,6 +40,19 @@ script = ExtResource("5_iywne")
 
 [node name="GameOverDetector" type="Node" parent="MainLayout" unique_id=297844884]
 script = ExtResource("6_p57ef")
+
+[node name="MatchDetector" type="Node" parent="MainLayout" unique_id=2055111049]
+script = ExtResource("7_gee14")
+
+[node name="GridBoard" type="GridContainer" parent="MainLayout" unique_id=2116142439]
+layout_mode = 2
+size_flags_vertical = 6
+mouse_filter = 0
+columns = 10
+script = ExtResource("1_uwrxv")
+
+[node name="ScoreManager" type="Node" parent="MainLayout" unique_id=1496978264]
+script = ExtResource("8_0tnpc")
 
 [node name="GameOverMenu" type="ColorRect" parent="." unique_id=2003725461]
 visible = false
@@ -86,3 +96,19 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 50
 text = "ИГРАТЬ СНОВА"
+
+[node name="ScoreLabel" type="Label" parent="." unique_id=266402954]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -86.0
+offset_top = -472.0
+offset_right = 93.0
+offset_bottom = -403.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "СЧЁТ: 0"

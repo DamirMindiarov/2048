@@ -20,3 +20,5 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_upbjj")
 expand_mode = 1
+flip_h = true
+flip_v = true

@@ -5,9 +5,9 @@ const PIECE_SCENE = preload("res://scenes/game_piece.tscn")
 
 # Массив картинок-заглушек, укажи свои рабочие пути к файлам PNG
 const PIECE_TEXTURES = [
-	preload("res://assets_piece/circle_black.png"),
-	preload("res://assets_piece/circle_close.png"),
-	preload("res://assets_piece/circle_empty.png"),
+	#preload("res://assets_piece/circle_black.png"),
+	#preload("res://assets_piece/circle_close.png"),
+	#preload("res://assets_piece/circle_empty.png"),
 	preload("res://assets_piece/square_black.png"),
 	preload("res://assets_piece/square_empty.png"),
 	preload("res://assets_piece/triangle_black.png"),
