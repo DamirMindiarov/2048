@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://bullqrfs2w7pl" path="res://scenes/match_detector.gd" id="7_gee14"]
 [ext_resource type="Script" uid="uid://bkg4v46ocvnmi" path="res://scenes/game_over_menu.gd" id="7_u5sy4"]
 [ext_resource type="Script" uid="uid://b85r2xfruf6nh" path="res://scenes/score_manager.gd" id="8_0tnpc"]
+[ext_resource type="Script" uid="uid://bys3rjlxd8kvt" path="res://scenes/trail_manager.gd" id="10_vtaks"]
 
 [node name="Game" type="Control" unique_id=1849560439]
 layout_mode = 3
@@ -53,6 +54,9 @@ script = ExtResource("1_uwrxv")
 
 [node name="ScoreManager" type="Node" parent="MainLayout" unique_id=1496978264]
 script = ExtResource("8_0tnpc")
+
+[node name="TrailManager" type="Node" parent="MainLayout" unique_id=39932772]
+script = ExtResource("10_vtaks")
 
 [node name="GameOverMenu" type="ColorRect" parent="." unique_id=2003725461]
 visible = false

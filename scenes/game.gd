@@ -9,6 +9,7 @@ extends Control
 @onready var game_over_menu: Control = $GameOverMenu
 @onready var match_detector: Node = $MainLayout/MatchDetector
 @onready var score_manager: Node = $MainLayout/ScoreManager
+@onready var trail_manager: Node = $MainLayout/TrailManager
 
 
 func _ready() -> void:
@@ -23,7 +24,9 @@ func _input(event: InputEvent) -> void:
 		print("ГЛАВНЫЙ СКРИПТ GAME ПОЙМАЛ ХОД: ", swipe)
 		
 		# 1. ДВИЖЕНИЕ: Приказываем сдвинуть фишки до упора
+		trail_manager.save_positions()
 		movement_controller.move_all_pieces(swipe)
+		trail_manager.draw_trails()
 		
 		# 🔥 ЖДЁМ КАДР: Даём Godot физически перекинуть фишки в новые ячейки пола!
 		await get_tree().process_frame

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dq65xapm4lkww"]
 
 [ext_resource type="Texture2D" uid="uid://cx5y1ecph710h" path="res://assets_piece/circle_black.png" id="1_6k0fr"]
+[ext_resource type="Script" uid="uid://b68brcq4pfovg" path="res://scenes/game_piece.gd" id="2_jui6c"]
 
 [node name="GamePiece" type="TextureRect" unique_id=1294077475]
 anchors_preset = 8
@@ -18,5 +19,4 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource("1_6k0fr")
 expand_mode = 1
-flip_h = true
-flip_v = true
+script = ExtResource("2_jui6c")
