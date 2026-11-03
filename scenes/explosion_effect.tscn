@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bfjeo3pu0emm8"]
+
+[ext_resource type="Texture2D" uid="uid://bpr8eh3q3wl45" path="res://icon.svg" id="1_0gbiy"]
+[ext_resource type="Script" uid="uid://dxyqjeghr135u" path="res://scenes/explosion_effect.gd" id="2_fewnv"]
+
+[node name="ExplosionEffect" type="CPUParticles2D" unique_id=726765478]
+emitting = false
+texture = ExtResource("1_0gbiy")
+one_shot = true
+explosiveness = 1.0
+spread = 180.0
+initial_velocity_min = 150.0
+initial_velocity_max = 300.0
+scale_amount_min = 0.1
+scale_amount_max = 0.3
+script = ExtResource("2_fewnv")

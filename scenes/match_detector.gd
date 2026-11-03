@@ -61,7 +61,8 @@ func check_and_destroy_matches() -> int:
 		for cell in cells_to_clear:
 			for child in cell.get_children():
 				if "GamePiece" in child.name:
-					child.queue_free()
+					#child.queue_free()
+					child.destroy_with_explosion()
 					
 	return destroyed_count
 
