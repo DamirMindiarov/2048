@@ -9,7 +9,10 @@
 [ext_resource type="Script" uid="uid://bullqrfs2w7pl" path="res://scenes/match_detector.gd" id="7_gee14"]
 [ext_resource type="Script" uid="uid://bkg4v46ocvnmi" path="res://scenes/game_over_menu.gd" id="7_u5sy4"]
 [ext_resource type="Script" uid="uid://b85r2xfruf6nh" path="res://scenes/score_manager.gd" id="8_0tnpc"]
+[ext_resource type="Script" uid="uid://ce02824e1n3yo" path="res://scenes/level_manager.gd" id="10_kvuet"]
 [ext_resource type="Script" uid="uid://bys3rjlxd8kvt" path="res://scenes/trail_manager.gd" id="10_vtaks"]
+[ext_resource type="PackedScene" uid="uid://dayhcpl7kofnk" path="res://scenes/hud.tscn" id="11_kvpfn"]
+[ext_resource type="Script" uid="uid://clp13yma1ymp3" path="res://scenes/bomb_button.gd" id="12_dinhu"]
 
 [node name="Game" type="Control" unique_id=1849560439]
 layout_mode = 3
@@ -21,6 +24,30 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_yqjtg")
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=1018479747]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=590246857]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -360.0
+offset_top = -368.0
+offset_right = 360.0
+offset_bottom = 368.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2592937, 0.2592937, 0.2592937, 1)
 
 [node name="MainLayout" type="VBoxContainer" parent="." unique_id=1111560087]
 layout_mode = 1
@@ -46,6 +73,7 @@ script = ExtResource("6_p57ef")
 script = ExtResource("7_gee14")
 
 [node name="GridBoard" type="GridContainer" parent="MainLayout" unique_id=2116142439]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 6
 mouse_filter = 0
@@ -57,6 +85,9 @@ script = ExtResource("8_0tnpc")
 
 [node name="TrailManager" type="Node" parent="MainLayout" unique_id=39932772]
 script = ExtResource("10_vtaks")
+
+[node name="LevelManager" type="Node" parent="MainLayout" unique_id=444707360]
+script = ExtResource("10_kvuet")
 
 [node name="GameOverMenu" type="ColorRect" parent="." unique_id=2003725461]
 visible = false
@@ -101,18 +132,23 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 50
 text = "ИГРАТЬ СНОВА"
 
-[node name="ScoreLabel" type="Label" parent="." unique_id=266402954]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -86.0
-offset_top = -472.0
-offset_right = 93.0
-offset_bottom = -403.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 50
-text = "СЧЁТ: 0"
+[node name="HUD" parent="." unique_id=1375258392 instance=ExtResource("11_kvpfn")]
+
+[node name="ScoreLabel" parent="HUD" index="0" unique_id=1447643962]
+anchors_preset = 0
+anchor_left = 0.0
+anchor_right = 0.0
+offset_left = 258.0
+offset_top = 201.0
+offset_right = 437.0
+offset_bottom = 270.0
+grow_horizontal = 1
+
+[node name="BombButton" parent="HUD" index="2" unique_id=1529420259]
+offset_left = 1.0
+offset_top = 141.0
+offset_right = 129.0
+offset_bottom = 269.0
+script = ExtResource("12_dinhu")
+
+[editable path="HUD"]

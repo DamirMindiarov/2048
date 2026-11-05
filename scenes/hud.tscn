@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://dayhcpl7kofnk"]
+
+[ext_resource type="Texture2D" uid="uid://bqw3tpa5u82v0" path="res://assets_hud/bomb.png" id="1_oo0fn"]
+[ext_resource type="Script" uid="uid://bf7yohmajtnpx" path="res://scenes/bomb_controller.gd" id="2_oo0fn"]
+
+[node name="HUD" type="CanvasLayer" unique_id=1375258392]
+
+[node name="ScoreLabel" type="Label" parent="." unique_id=1447643962]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -89.5
+offset_right = 89.5
+offset_bottom = 69.0
+grow_horizontal = 2
+size_flags_horizontal = 2
+theme_override_font_sizes/font_size = 50
+text = "СЧЁТ: 0"
+
+[node name="LevelLabel" type="Label" parent="." unique_id=1554574951]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 50
+text = "LVL: 1"
+
+[node name="BombButton" type="Control" parent="." unique_id=1529420259]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 60.0
+offset_top = 123.0
+offset_right = 188.0
+offset_bottom = 251.0
+metadata/_edit_group_ = true
+
+[node name="Icon" type="TextureRect" parent="BombButton" unique_id=132915177]
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 128.0
+texture = ExtResource("1_oo0fn")
+
+[node name="CountLabel" type="Label" parent="BombButton" unique_id=1974201509]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 84.0
+offset_right = 126.0
+offset_bottom = 126.0
+theme_override_font_sizes/font_size = 30
+text = "x2"
+horizontal_alignment = 2
+
+[node name="BombController" type="Node" parent="BombButton" unique_id=1678957962]
+script = ExtResource("2_oo0fn")

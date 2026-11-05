@@ -8,3 +8,10 @@ var board_size: int = 5
 # === 💨 НАСТРОЙКИ ВИЗУАЛЬНОГО ШЛЕЙФА ===
 var trail_steps: int = 5         # Количество остаточных копий по пути полёта (steps)
 var trail_opacity: float = 0.1   # Начальная прозрачность призраков (ghost.modulate.a)
+
+var bomb_count: int = 2
+var bomb_radius: int = 1
+
+var total_score: int = 0
+var current_level: int = 1
+var score_per_level: int = 1

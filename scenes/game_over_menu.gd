@@ -8,9 +8,14 @@ func _ready() -> void:
 	if restart_button:
 		restart_button.pressed.connect(_on_restart_button_pressed)
 
-# Эта функция сработает строго в момент клика по кнопке "ИГРАТЬ СНОВА"
+
 func _on_restart_button_pressed() -> void:
 	print("МЕНЮ GAME OVER: Перезапускаю уровень с чистого листа!")
 	
-	# Магическая строчка, которая полностью обнуляет игру и запускает её заново
+	# 🔥 СБРАСЫВАЕМ ВСЮ СТАТИСТИКУ В БАНКЕ ИГРЫ ПЕРЕД ПЕРЕЗАПУСКОМ:
+	GameManager.bomb_count = 2
+	GameManager.total_score = 0
+	GameManager.current_level = 1
+	
+	# Перезапускаем сцену
 	get_tree().reload_current_scene()
